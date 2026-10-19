@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101411" />
+    <meta name="description" content="CodeLoop 是一个让你粘贴任意代码并无限 shadow typing 练习的互动工具。" />
+    <meta name="keywords" content="shadow typing, code typing, coding practice, learn to code, 代码练习" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CodeLoop · Shadow typing practice" />
+    <meta property="og:description" content="粘贴一段代码，逐字符输入，完成后自动重新开始。" />
+    <meta property="og:url" content="https://codeloop.dev/" />
+    <title>CodeLoop · Shadow typing practice</title>
+    <link rel="canonical" href="https://codeloop.dev/" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebApplication","name":"CodeLoop","applicationCategory":"EducationalApplication","description":"粘贴任意代码并无限 shadow typing 练习。","operatingSystem":"Any"}
+    </script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="CodeLoop 首页"><span>//</span> CodeLoop</a>
+        <span class="status"><i></i><span id="sessionStatus">READY</span></span>
+      </header>
+
+      <section class="intro" aria-labelledby="pageTitle">
+        <p class="eyebrow">SHADOW TYPING</p>
+        <h1 id="pageTitle">看一段，<em>打一段。</em></h1>
+        <p>粘贴你正在学习的代码。输入完成后会自动重新开始，持续建立肌肉记忆。</p>
+      </section>
+
+      <section class="practice-card" aria-label="CodeLoop 练习区">
+        <div class="setup-row">
+          <label for="sourceInput">练习内容</label>
+          <button id="startButton" type="button">开始练习 ↗</button>
+        </div>
+        <textarea id="sourceInput" class="source-input" rows="6" spellcheck="false" placeholder="在这里粘贴或输入代码…">const greeting = "hello";
+console.log(greeting);</textarea>
+        <div class="practice-header">
+          <span>SHADOW THIS</span>
+          <span id="roundStat">ROUND 0</span>
+        </div>
+        <div class="progress-track"><span id="progressBar"></span></div>
+        <pre id="codeDisplay" class="code-display" aria-label="要输入的内容"></pre>
+        <label class="visually-hidden" for="typingInput">输入练习内容</label>
+        <textarea id="typingInput" class="typing-input" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="开始输入…"></textarea>
+        <div class="input-footer">
+          <span id="feedback" aria-live="polite">修改上方内容后点击开始</span>
+          <span><strong id="accuracyStat">100%</strong> ACCURACY · <strong id="speedStat">0</strong> WPM</span>
+        </div>
+        <div class="actions"><button id="resetButton" class="secondary-button" type="button">清空当前输入</button><button id="pauseButton" class="secondary-button" type="button">暂停</button></div>
+      </section>
+
+      <footer>LOCAL MODE · NO ACCOUNT · JUST CODE</footer>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
