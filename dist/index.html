@@ -42,9 +42,11 @@ console.log(greeting);</textarea>
           <span id="roundStat">ROUND 0</span>
         </div>
         <div class="progress-track"><span id="progressBar"></span></div>
-        <pre id="codeDisplay" class="code-display" aria-label="要输入的内容"></pre>
-        <label class="visually-hidden" for="typingInput">输入练习内容</label>
-        <textarea id="typingInput" class="typing-input" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="开始输入…"></textarea>
+        <div class="editor" aria-label="代码练习编辑器">
+          <pre id="codeDisplay" class="code-display" aria-label="要输入的内容"></pre>
+          <label class="visually-hidden" for="typingInput">输入练习内容</label>
+          <textarea id="typingInput" class="typing-input" rows="5" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="开始输入…"></textarea>
+        </div>
         <div class="input-footer">
           <span id="feedback" aria-live="polite">修改上方内容后点击开始</span>
           <span><strong id="accuracyStat">100%</strong> ACCURACY · <strong id="speedStat">0</strong> WPM</span>

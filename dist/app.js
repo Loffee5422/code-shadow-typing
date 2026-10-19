@@ -42,6 +42,18 @@ function handleInput() {
 
 $('#startButton').addEventListener('click', startPractice);
 $('#typingInput').addEventListener('input', handleInput);
+$('#typingInput').addEventListener('scroll', () => {
+  $('#codeDisplay').scrollTop = $('#typingInput').scrollTop;
+  $('#codeDisplay').scrollLeft = $('#typingInput').scrollLeft;
+});
+$('#typingInput').addEventListener('keydown', (event) => {
+  if (event.key !== 'Tab') return;
+  event.preventDefault();
+  if (paused || advancing || !target) return;
+  const input = event.currentTarget;
+  input.setRangeText('\t', input.selectionStart, input.selectionEnd, 'end');
+  handleInput();
+});
 $('#sourceInput').addEventListener('input', () => { if (!target) renderCode($('#sourceInput').value); });
 $('#resetButton').addEventListener('click', () => { $('#typingInput').value = ''; wrongCount = 0; startedAt = performance.now(); advancing = false; renderCode(); updateStats(); $('#typingInput').focus(); });
 $('#pauseButton').addEventListener('click', () => { if (!target) return; paused = !paused; $('#pauseButton').textContent = paused ? '继续' : '暂停'; $('#sessionStatus').textContent = paused ? 'PAUSED' : 'LIVE'; $('#feedback').textContent = paused ? '已暂停' : '继续输入'; });
