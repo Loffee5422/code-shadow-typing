@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101411" />
+    <meta name="description" content="CodeLoop 是一个用无限 shadow typing 练习代码阅读、语法和键盘输入的互动学习工具。" />
+    <meta name="keywords" content="shadow typing, code typing, coding practice, learn to code, 代码练习" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CodeLoop · Shadow type your way into code" />
+    <meta property="og:description" content="看懂一行，打出一行。用无限 shadow typing 建立代码肌肉记忆。" />
+    <meta property="og:url" content="https://codeloop.dev/" />
+    <title>CodeLoop · Shadow type your way into code</title>
+    <link rel="canonical" href="https://codeloop.dev/" />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "CodeLoop",
+        "applicationCategory": "EducationalApplication",
+        "description": "通过无限 shadow typing 练习代码阅读与输入。",
+        "operatingSystem": "Any"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="CodeLoop 首页"><span class="brand-mark">//</span> CodeLoop</a>
+        <div class="topbar-meta"><span class="status-dot"></span><span id="sessionStatus">SESSION LIVE</span><span class="divider"></span><span>LOCAL MODE</span></div>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="pageTitle">
+          <div>
+            <p class="eyebrow">LEARN BY REPETITION <span>⌘</span></p>
+            <h1 id="pageTitle">Shadow type<br /><em>your way</em> into code.</h1>
+            <p class="hero-copy">看懂一行，打出一行。正确完成后自动进入下一段，保持节奏，直到代码变成肌肉记忆。</p>
+          </div>
+          <div class="hero-stat"><strong id="loopCount">01</strong><span>LOOPS<br />COMPLETED</span></div>
+        </section>
+
+        <section class="practice-card" aria-label="代码 shadow typing 练习">
+          <div class="card-toolbar">
+            <div class="lesson-label"><span class="lesson-icon">⌁</span><span id="lessonTitle">01 / VARIABLES</span></div>
+            <div class="toolbar-actions"><button class="ghost-button" id="resetButton" type="button">↻ RESET</button><button class="pause-button" id="pauseButton" type="button">Ⅱ PAUSE</button></div>
+          </div>
+          <div class="progress-track"><span id="progressBar"></span></div>
+          <div class="code-layout">
+            <article class="code-panel">
+              <div class="panel-heading"><span>CODE TO SHADOW</span><span class="language-pill" id="languageLabel">JAVASCRIPT</span></div>
+              <pre id="codeDisplay" class="code-display" aria-label="要输入的代码"></pre>
+              <label class="visually-hidden" for="typingInput">在此输入代码</label>
+              <textarea id="typingInput" class="typing-input" rows="3" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" placeholder="Start typing here…"></textarea>
+              <div class="input-footer"><span><kbd>CTRL</kbd> + <kbd>ENTER</kbd> to focus</span><span id="feedback" aria-live="polite">准备好后开始输入</span></div>
+            </article>
+            <aside class="lesson-panel">
+              <div class="panel-heading"><span>WHY THIS MATTERS</span><span class="line-number" id="lineCount">01—04</span></div>
+              <h2 id="lessonHeading">把数据放进一个名字里。</h2>
+              <p id="lessonDescription">变量让代码可以记住一个值。先写出结构，再观察值如何流动。</p>
+              <div class="annotation-list" id="annotationList"></div>
+              <div class="tip-box"><span>TIP</span><p>不要追求快。先让每个字符准确落地，速度会在重复中出现。</p></div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="stats-row" aria-label="练习数据">
+          <div><span>ACCURACY</span><strong id="accuracyStat">100%</strong></div>
+          <div><span>SPEED</span><strong id="speedStat">0 <small>WPM</small></strong></div>
+          <div><span>STREAK</span><strong id="streakStat">0 <small>ROUNDS</small></strong></div>
+          <div class="quote-cell"><span>THE LOOP</span><strong>READ → TYPE → REPEAT <em>↗</em></strong></div>
+        </section>
+      </main>
+
+      <footer><span>CODELOOP / A SMALL PRACTICE FOR BIG IDEAS</span><span>NO ACCOUNT · NO DISTRACTIONS · JUST CODE</span></footer>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
